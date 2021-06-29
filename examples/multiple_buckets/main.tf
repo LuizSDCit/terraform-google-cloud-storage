@@ -25,6 +25,7 @@ resource "random_string" "prefix" {
 }
 
 module "cloud_storage" {
+  silly_label        = "awesome"
   source     = "../.."
   project_id = var.project_id
   prefix     = "multiple-buckets-${random_string.prefix.result}"
